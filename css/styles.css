@@ -1,0 +1,7 @@
+html {
+    --color-orange-50: #fff7ed;
+}
+
+body {
+    background-color: var(--color-orange-50);
+}
