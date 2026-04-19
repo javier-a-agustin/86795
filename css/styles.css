@@ -79,6 +79,18 @@ main {
     filter: saturate(1.1);
 }
 
+.product-card .category {
+    margin: 0.5rem 0 0;
+    font-size: 0.875rem;
+    color: var(--color-orange-600);
+}
+
+.product-card .price {
+    margin: 0.25rem 0 0.75rem;
+    font-size: 1.125rem;
+    font-weight: 700;
+}
+
 footer {
     text-align: center;
     padding: 1.5rem;
