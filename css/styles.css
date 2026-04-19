@@ -67,17 +67,28 @@ main {
 
 .products {
     display: grid;
-    grid-template-columns: auto auto;
+    grid-template-columns: auto;
     justify-content: center;
     gap: 2rem;
 }
 
+@media all and (min-width: 768px) {
+    .products {
+        grid-template-columns: auto auto;
+    }
+}
+
+@media all and (min-width: 1024px) {
+    .products {
+        grid-template-columns: auto auto auto;
+    }
+}
+
 .product-card {
-    max-width: 20rem;
-    width: 100%;
+    width: 20rem;
     padding: 1.5rem;
     background-color: #ffffff;
-    border: 1px solid var(--color-orange-100);
+    border: 1px solid var(--color-orange-100); 
     border-radius: 1rem;
     box-shadow: var(--shadow);
 }
@@ -109,6 +120,43 @@ main {
     margin: 0.25rem 0 0.75rem;
     font-size: 1.125rem;
     font-weight: 700;
+}
+
+.card-actions {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.btn-primary,
+.btn-secondary {
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    border: 2px solid var(--color-orange-600);
+}
+
+.btn-primary {
+    background-color: var(--color-orange-600);
+    color: #ffffff;
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+    background-color: var(--color-orange-50);
+    color: var(--color-orange-600);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: var(--color-orange-600);
+}
+
+.btn-secondary:hover,
+.btn-secondary:focus {
+    background-color: var(--color-orange-600);
+    color: #ffffff;
 }
 
 footer {
