@@ -22,13 +22,33 @@ header {
     background-color: var(--color-orange-100);
     border-bottom: 2px solid var(--color-orange-600);
     padding: 2rem 1.5rem;
-    text-align: left;
+    display: flex;
+    justify-content: space-between;
 }
 
 header h1 {
     margin: 0;
     font-size: clamp(1.5rem, 5vw, 2rem);
     font-weight: 700;
+    color: var(--color-orange-600);
+}
+
+nav ul {
+    list-style: none;
+    margin: 1rem 0 0;
+    padding: 0;
+    display: flex;
+    gap: 2rem;
+}
+
+nav a {
+    color: var(--color-gray-700);
+    text-decoration: none;
+    font-size: 0.875rem;
+    font-weight: 600;
+}
+
+nav a:hover {
     color: var(--color-orange-600);
 }
 
