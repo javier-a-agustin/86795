@@ -1,7 +1,15 @@
-# Aplicaciones web cliente
+# PlantyPulse
+
+## Aplicaciones web cliente #86795
+## Javier Agustin Fernandez
 
 ## Aplicacion a desarrollar
 
 Web ecommerce sobre Bonsai. Accesorios, suplementos, sustratos, plantines, macetas, bonsai
 
-requerimientos: header, footer, main, que parezca catalogo
+Requerimientos minimos primer parcial: 
+- header
+- footer
+- main
+
+Que parezca catalogo
