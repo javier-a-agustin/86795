@@ -106,9 +106,15 @@ main {
     width: 20rem;
     padding: 1.5rem;
     background-color: #ffffff;
-    border: 1px solid var(--color-orange-100); 
+    border: 1px solid var(--color-orange-100);
     border-radius: 1rem;
     box-shadow: var(--shadow);
+    display: flex;
+    flex-direction: column;
+}
+
+.card-content {
+    margin-top: auto;
 }
 
 .product-card:hover {
