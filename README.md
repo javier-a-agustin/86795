@@ -13,3 +13,4 @@ Requerimientos minimos primer parcial:
 - main
 
 Que parezca catalogo
+Agregar nueva pagina quienes somos
