@@ -1,4 +1,5 @@
 html {
+    --color-white: #ffffff;
     --color-orange-50: #fff7ed;
     --color-orange-100: #ffedd5;
     --color-orange-600: #ea580c;
@@ -105,7 +106,7 @@ main {
 .product-card {
     width: 20rem;
     padding: 1.5rem;
-    background-color: #ffffff;
+    background-color: var(--color-white);
     border: 1px solid var(--color-orange-100);
     border-radius: 1rem;
     box-shadow: var(--shadow);
@@ -163,7 +164,7 @@ main {
 
 .btn-primary {
     background-color: var(--color-orange-600);
-    color: #ffffff;
+    color: var(--color-white);
 }
 
 .btn-primary:hover,
@@ -180,7 +181,7 @@ main {
 .btn-secondary:hover,
 .btn-secondary:focus {
     background-color: var(--color-orange-600);
-    color: #ffffff;
+    color: var(--color-white);
 }
 
 footer {
