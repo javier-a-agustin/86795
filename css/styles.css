@@ -45,11 +45,12 @@ header {
     }
 }
 
-header h1 {
+header h1 a {
     margin: 0;
     font-size: clamp(1.5rem, 5vw, 2rem);
     font-weight: 700;
     color: var(--color-orange-600);
+    text-decoration: none;
 }
 
 nav ul {
@@ -182,6 +183,23 @@ main {
 .btn-secondary:focus {
     background-color: var(--color-orange-600);
     color: var(--color-white);
+}
+
+#nosotros {
+    max-width: 40rem;
+    margin: 0 auto;
+    min-height: 70vh;
+}
+
+#nosotros h2 {
+    font-size: clamp(1.25rem, 4vw, 1.75rem);
+    font-weight: 700;
+    margin: 0 0 1.5rem;
+    color: var(--color-orange-600);
+}
+
+#nosotros p {
+    margin: 0 0 1rem;
 }
 
 footer {
