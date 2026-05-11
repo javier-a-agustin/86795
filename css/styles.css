@@ -113,10 +113,12 @@ main {
     box-shadow: var(--shadow);
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
 }
 
 .card-content {
-    margin-top: auto;
+    /* margin-top: auto; */
+    font: 100;
 }
 
 .product-card:hover {
@@ -136,7 +138,7 @@ main {
     filter: saturate(1.1);
 }
 
-.product-card .category {
+.category {
     margin: 0.5rem 0 0;
     font-size: 0.875rem;
     color: var(--color-orange-600);
@@ -213,10 +215,15 @@ main {
 
 .product-detail img {
     width: 100%;
+    height: 100%;
     border-radius: 1rem;
+    border: 1px solid var(--color-orange-100);
     box-shadow: var(--shadow);
-    filter: saturate(1.1);
-    display: block;
+}
+
+.product-detail img:hover {
+    filter: saturate(1.3) brightness(1.05);
+    box-shadow: var(--shadow-hover);
 }
 
 .product-detail h2 {
@@ -237,7 +244,7 @@ main {
     }
 
     .product-detail img {
-        width: 20rem;
+        width: 45%;
     }
 }
 
@@ -348,7 +355,7 @@ main {
 
 .care-card {
     padding: 1.5rem;
-    background-color: #ffffff;
+    background-color: var(--color-white);
     border: 1px solid var(--color-orange-100);
     border-radius: 1rem;
     box-shadow: var(--shadow);
