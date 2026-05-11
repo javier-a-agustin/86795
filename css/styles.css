@@ -148,6 +148,25 @@ main {
     font-weight: 700;
 }
 
+.btn-detail {
+    display: block;
+    margin-top: 0.5rem;
+    text-align: center;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--color-gray-700);
+    border: 2px solid var(--color-orange-100);
+}
+
+.btn-detail:hover,
+.btn-detail:focus {
+    border-color: var(--color-orange-600);
+    color: var(--color-orange-600);
+}
+
 .card-actions {
     display: flex;
     gap: 0.5rem;
@@ -183,6 +202,43 @@ main {
 .btn-secondary:focus {
     background-color: var(--color-orange-600);
     color: var(--color-white);
+}
+
+.product-detail {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    min-height: 70vh;
+}
+
+.product-detail img {
+    width: 100%;
+    border-radius: 1rem;
+    box-shadow: var(--shadow);
+    filter: saturate(1.1);
+    display: block;
+}
+
+.product-detail h2 {
+    font-size: clamp(1.5rem, 4vw, 2rem);
+    font-weight: 700;
+    margin: 0.5rem 0 1rem;
+    color: var(--color-gray-700);
+}
+
+.product-detail p {
+    margin: 0 0 1rem;
+}
+
+@media all and (min-width: 768px) {
+    .product-detail {
+        flex-direction: row;
+        align-items: flex-start;
+    }
+
+    .product-detail img {
+        width: 20rem;
+    }
 }
 
 #nosotros {
