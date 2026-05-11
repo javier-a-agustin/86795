@@ -311,6 +311,61 @@ main {
     font-size: 0.9375rem;
 }
 
+.specs {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 1rem;
+}
+
+.specs li {
+    padding: 0.375rem 0;
+    border-bottom: 1px solid var(--color-orange-100);
+    font-size: 0.9375rem;
+}
+
+.care-section {
+    margin-top: 3rem;
+}
+
+.care-section h3 {
+    font-size: clamp(1.125rem, 3vw, 1.5rem);
+    font-weight: 700;
+    margin: 0 0 1.5rem;
+    color: var(--color-orange-600);
+}
+
+.care-grid {
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 1.5rem;
+}
+
+@media all and (max-width: 768px) {
+    .care-grid {
+        grid-template-columns: auto;
+    }
+}
+
+.care-card {
+    padding: 1.5rem;
+    background-color: #ffffff;
+    border: 1px solid var(--color-orange-100);
+    border-radius: 1rem;
+    box-shadow: var(--shadow);
+}
+
+.care-card h4 {
+    margin: 0 0 0.5rem;
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--color-orange-600);
+}
+
+.care-card p {
+    margin: 0;
+    font-size: 0.9375rem;
+}
+
 footer {
     text-align: center;
     padding: 1.5rem;
