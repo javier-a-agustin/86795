@@ -85,6 +85,29 @@ main {
     text-align: center;
 }
 
+.message {
+    position: fixed;
+    bottom: 1.5rem;
+    left: 50%;
+    transform: translateX(-50%) translateY(1rem);
+    margin: 0;
+    padding: 0.75rem 1.25rem;
+    background-color: var(--color-orange-600);
+    color: var(--color-white);
+    font-weight: 600;
+    border-radius: 0.5rem;
+    box-shadow: var(--shadow-hover);
+    z-index: 1000;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.message.is-visible {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+}
+
 .products {
     display: grid;
     grid-template-columns: auto;
