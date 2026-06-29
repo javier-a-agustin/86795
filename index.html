@@ -19,7 +19,7 @@
                 <li><a href="about-us.html">Sobre nosotros</a></li>
                 <li><a href="#">Categorías</a></li>
                 <li><a href="#">Contacto</a></li>
-                <li class="cart-indicator">Carrito <span id="cart-count" class="cart-count">0</span></li>
+                <li><button id="cart-toggle" class="cart-indicator" type="button">Carrito <span id="cart-count" class="cart-count">0</span></button></li>
             </ul>
         </nav>
     </header>
@@ -50,5 +50,15 @@
         </div>
         <p class="footer-copy">PlantyPulse &copy; 2026 by <a href="https://github.com/javier-a-agustin/86795" target="_blank">Javier</a></p>
     </footer>
+
+    <div id="cart-overlay" class="cart-overlay"></div>
+    <aside id="cart-drawer" class="cart-drawer" aria-label="Carrito">
+        <div class="cart-drawer-header">
+            <h2>Tu carrito</h2>
+            <button id="cart-close" class="cart-close" type="button" aria-label="Cerrar">&times;</button>
+        </div>
+        <ul id="cart-items" class="cart-items"></ul>
+        <p class="cart-total">Total: <span id="cart-total">$0</span></p>
+    </aside>
 </body>
 </html>

@@ -18,7 +18,7 @@ function addToCart(id) {
         cart.push({ id, quantity: 1 });
     }
     saveCart();
-    updateCartBadge();
+    updateCart();
 }
 
 function removeFromCart(id) {
@@ -29,7 +29,7 @@ function removeFromCart(id) {
         cart = cart.filter((entry) => entry.id !== id);
     }
     saveCart();
-    updateCartBadge();
+    updateCart();
 }
 
 function getTotalItems() {
@@ -47,5 +47,54 @@ function updateCartBadge() {
     const badge = document.querySelector("#cart-count");
     badge.textContent = getTotalItems();
 }
+
+function renderCart() {
+    const list = document.querySelector("#cart-items");
+    const total = document.querySelector("#cart-total");
+
+    if (cart.length === 0) {
+        list.innerHTML = `<li class="cart-empty">Tu carrito está vacío</li>`;
+    } else {
+        list.innerHTML = cart
+            .map((entry) => {
+                const product = findProductById(entry.id);
+                return `
+                    <li class="cart-item">
+                        <span class="cart-item-name">${product.name} x${entry.quantity}</span>
+                        <span class="cart-item-price">${formatPrice(product.price * entry.quantity)}</span>
+                        <button class="cart-remove" data-id="${entry.id}" type="button" aria-label="Quitar uno">&minus;</button>
+                    </li>
+                `;
+            })
+            .join("");
+    }
+
+    total.textContent = formatPrice(getTotalPrice());
+}
+
+function updateCart() {
+    updateCartBadge();
+    renderCart();
+}
+
+function openCart() {
+    renderCart();
+    document.querySelector("#cart-drawer").classList.add("is-open");
+    document.querySelector("#cart-overlay").classList.add("is-open");
+}
+
+function closeCart() {
+    document.querySelector("#cart-drawer").classList.remove("is-open");
+    document.querySelector("#cart-overlay").classList.remove("is-open");
+}
+
+document.querySelector("#cart-toggle").addEventListener("click", openCart);
+document.querySelector("#cart-close").addEventListener("click", closeCart);
+document.querySelector("#cart-overlay").addEventListener("click", closeCart);
+document.querySelector("#cart-items").addEventListener("click", (event) => {
+    const button = event.target.closest(".cart-remove");
+    if (!button) return;
+    removeFromCart(Number(button.dataset.id));
+});
 
 updateCartBadge();
