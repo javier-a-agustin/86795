@@ -122,3 +122,11 @@ const products = [
         },
     },
 ];
+
+function findProductById(id) {
+    return products.find((product) => product.id === id);
+}
+
+function formatPrice(price) {
+    return "$" + price.toLocaleString("es-AR");
+}

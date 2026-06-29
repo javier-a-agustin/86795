@@ -1,7 +1,3 @@
-function formatPrice(price) {
-    return "$" + price.toLocaleString("es-AR");
-}
-
 function createCardHTML(product) {
     return `
         <article class="product-card" data-id="${product.id}">
@@ -14,7 +10,7 @@ function createCardHTML(product) {
                     <button class="btn-primary">Comprar</button>
                     <button class="btn-secondary">Agregar al carrito</button>
                 </div>
-                <a href="product-detail.html" class="btn-detail">Ver detalles</a>
+                <a href="product-detail.html?id=${product.id}" class="btn-detail">Ver detalles</a>
             </div>
         </article>
     `;
@@ -23,10 +19,6 @@ function createCardHTML(product) {
 function renderCatalog(list) {
     const catalog = document.querySelector("#catalog");
     catalog.innerHTML = list.map(createCardHTML).join("");
-}
-
-function findProductById(id) {
-    return products.find((product) => product.id === id);
 }
 
 function showMessage(text) {
