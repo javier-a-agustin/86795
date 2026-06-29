@@ -46,6 +46,7 @@ function handleCatalogClick(event) {
     if (button.classList.contains("btn-primary")) {
         showMessage(`Comprando "${product.name}"...`);
     } else if (button.classList.contains("btn-secondary")) {
+        addToCart(product.id);
         showMessage(`Agregaste "${product.name}" al carrito`);
     }
 }
