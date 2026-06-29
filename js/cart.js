@@ -1,4 +1,14 @@
-let cart = [];
+const CART_KEY = "plantypulse_cart";
+
+let cart = loadCart();
+
+function loadCart() {
+    return JSON.parse(localStorage.getItem(CART_KEY)) || [];
+}
+
+function saveCart() {
+    localStorage.setItem(CART_KEY, JSON.stringify(cart));
+}
 
 function addToCart(id) {
     const item = cart.find((entry) => entry.id === id);
@@ -7,6 +17,7 @@ function addToCart(id) {
     } else {
         cart.push({ id, quantity: 1 });
     }
+    saveCart();
     updateCartBadge();
 }
 
@@ -17,6 +28,7 @@ function removeFromCart(id) {
     if (item.quantity <= 0) {
         cart = cart.filter((entry) => entry.id !== id);
     }
+    saveCart();
     updateCartBadge();
 }
 
@@ -35,3 +47,5 @@ function updateCartBadge() {
     const badge = document.querySelector("#cart-count");
     badge.textContent = getTotalItems();
 }
+
+updateCartBadge();
