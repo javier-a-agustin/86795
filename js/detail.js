@@ -5,6 +5,7 @@ function renderDetail() {
 
     if (!product) {
         container.innerHTML = `<p class="not-found">Producto no encontrado.</p>`;
+        document.querySelector(".care-section").remove();
         return;
     }
 
