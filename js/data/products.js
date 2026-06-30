@@ -1,7 +1,7 @@
 let products = [];
 
 async function loadProducts() {
-    const url = `https://api.airtable.com/v0/${AIRTABLE_BASE}/${AIRTABLE_TABLE}`;
+    const url = `https://api.airtable.com/v0/${AIRTABLE_BASE}/${encodeURIComponent(AIRTABLE_TABLE)}`;
     const res = await fetch(url, {
         headers: { Authorization: `Bearer ${AIRTABLE_TOKEN}` },
     });
