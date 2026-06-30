@@ -25,7 +25,6 @@ function renderDetail() {
             </ul>
             <p>${product.description}</p>
             <div class="card-actions">
-                <button class="btn-primary">Comprar</button>
                 <button class="btn-secondary" data-id="${product.id}">Agregar al carrito</button>
             </div>
         </article>

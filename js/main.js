@@ -7,7 +7,6 @@ function createCardHTML(product) {
                 <p class="category">${product.category}</p>
                 <p class="price">${formatPrice(product.price)}</p>
                 <div class="card-actions">
-                    <button class="btn-primary">Comprar</button>
                     <button class="btn-secondary">Agregar al carrito</button>
                 </div>
                 <a href="product-detail.html?id=${product.id}" class="btn-detail">Ver detalles</a>
@@ -35,9 +34,7 @@ function handleCatalogClick(event) {
     const card = event.target.closest(".product-card");
     const product = findProductById(Number(card.dataset.id));
 
-    if (button.classList.contains("btn-primary")) {
-        showMessage(`Comprando "${product.name}"...`);
-    } else if (button.classList.contains("btn-secondary")) {
+    if (button.classList.contains("btn-secondary")) {
         addToCart(product.id);
         showMessage(`Agregaste "${product.name}" al carrito`);
     }
