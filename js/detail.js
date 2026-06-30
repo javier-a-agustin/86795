@@ -38,4 +38,4 @@ document.querySelector("#product-detail").addEventListener("click", (event) => {
     addToCart(Number(button.dataset.id));
 });
 
-loadProducts().then(renderDetail);
+loadProducts().then(renderDetail).catch((error) => console.table(error));

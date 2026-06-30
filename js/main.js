@@ -46,4 +46,4 @@ function handleCatalogClick(event) {
 const catalog = document.querySelector("#catalog");
 catalog.addEventListener("click", handleCatalogClick);
 
-loadProducts().then(renderCatalog);
+loadProducts().then(renderCatalog).catch((error) => console.table(error));
