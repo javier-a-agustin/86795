@@ -234,6 +234,11 @@ main {
     grid-column: 1 / -1;
 }
 
+#catalog .loading {
+    width: 480px;
+    max-width: 90%;
+}
+
 .message {
     position: fixed;
     bottom: 1.5rem;
@@ -345,6 +350,10 @@ main {
     display: flex;
     gap: 0.5rem;
     margin-top: 1rem;
+}
+
+.card-actions .btn-secondary {
+    width: 100%;
 }
 
 .btn-primary,
