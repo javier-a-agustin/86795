@@ -12,6 +12,7 @@ function renderDetail() {
     document.title = `${product.name} — PlantyPulse`;
 
     container.innerHTML = `
+        <button class="fav-btn ${isFavorite(product.id) ? "is-favorite" : ""}" data-id="${product.id}" type="button" aria-label="Favorito">${HEART_SVG}</button>
         <img src="${product.img}" alt="${product.alt}" width="600" height="400" />
         <article>
             <p class="category">${product.category}</p>
@@ -32,9 +33,13 @@ function renderDetail() {
 }
 
 document.querySelector("#product-detail").addEventListener("click", (event) => {
-    const button = event.target.closest(".btn-secondary");
+    const button = event.target.closest("button");
     if (!button) return;
-    addToCart(Number(button.dataset.id));
+    if (button.classList.contains("btn-secondary")) {
+        addToCart(Number(button.dataset.id));
+    } else if (button.classList.contains("fav-btn")) {
+        toggleFavorite(Number(button.dataset.id));
+    }
 });
 
 loadProducts().then(renderDetail).catch((error) => console.table(error));
