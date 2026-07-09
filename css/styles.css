@@ -310,6 +310,7 @@ main {
 .fav-btn svg {
     width: 100%;
     height: 100%;
+    overflow: visible;
     fill: none;
     stroke: #94a3b8;
     stroke-width: 10;
