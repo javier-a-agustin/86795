@@ -194,6 +194,10 @@ nav a:hover {
     flex-shrink: 0;
 }
 
+#favorites-items .cart-item {
+    cursor: pointer;
+}
+
 .cart-item-info {
     flex: 1;
     display: flex;

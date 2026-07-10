@@ -52,10 +52,13 @@ function renderFavorites() {
         .map((id) => {
             const product = findProductById(id);
             return `
-                <li class="cart-item">
-                    <span class="cart-item-name">${product.name}</span>
-                    <span class="cart-item-price">${formatPrice(product.price)}</span>
-                    <button class="cart-remove" data-id="${id}" type="button" aria-label="Quitar de favoritos">&minus;</button>
+                <li class="cart-item" data-id="${id}">
+                    <img class="cart-item-img" src="${product.img}" alt="${product.alt}" />
+                    <div class="cart-item-info">
+                        <span class="cart-item-name">${product.name}</span>
+                        <span class="cart-item-price">${formatPrice(product.price)}</span>
+                    </div>
+                    <button class="cart-delete" data-id="${id}" type="button" aria-label="Quitar de favoritos"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/><line x1="10" y1="11" x2="10" y2="17"/><line x1="14" y1="11" x2="14" y2="17"/></svg></button>
                 </li>
             `;
         })
@@ -83,9 +86,15 @@ document.querySelector("#favorites-toggle").addEventListener("click", openFavori
 document.querySelector("#favorites-close").addEventListener("click", closeFavorites);
 document.querySelector("#favorites-overlay").addEventListener("click", closeFavorites);
 document.querySelector("#favorites-items").addEventListener("click", (event) => {
-    const button = event.target.closest(".cart-remove");
-    if (!button) return;
-    toggleFavorite(Number(button.dataset.id));
+    const deleteButton = event.target.closest(".cart-delete");
+    if (deleteButton) {
+        toggleFavorite(Number(deleteButton.dataset.id));
+        return;
+    }
+
+    const item = event.target.closest(".cart-item");
+    if (!item) return;
+    window.location.href = `product-detail.html?id=${item.dataset.id}`;
 });
 
 updateFavoritesBadge();
