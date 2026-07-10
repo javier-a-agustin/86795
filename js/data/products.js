@@ -1,6 +1,15 @@
 let products = [];
 
+const PRODUCTS_CACHE_KEY = "plantypulse_products_cache";
+const CACHE_TIMEOUT = 60 * 60 * 1000;
+
 async function loadProducts() {
+    const cached = JSON.parse(localStorage.getItem(PRODUCTS_CACHE_KEY));
+    if (cached && Date.now() - cached.savedAt < CACHE_TIMEOUT) {
+        products = cached.data;
+        return products;
+    }
+
     const url = `https://api.airtable.com/v0/${AIRTABLE_BASE}/${encodeURIComponent(AIRTABLE_TABLE)}`;
     const res = await fetch(url, {
         headers: { Authorization: `Bearer ${AIRTABLE_TOKEN}` },
@@ -21,6 +30,8 @@ async function loadProducts() {
             light: r.fields.Light ?? "",
         },
     }));
+
+    localStorage.setItem(PRODUCTS_CACHE_KEY, JSON.stringify({ data: products, savedAt: Date.now() }));
     return products;
 }
 
